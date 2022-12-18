@@ -1,6 +1,6 @@
     <?php
 
-        define('UPLOAD_DIR',  '/var/uploaded_files/');
+        define('UPLOAD_DIR',  'C:/xampp/htdocs/exportImport/');
         define('MAXSIZE', 7340032); // allow max 7 MB
 
         $ALLOWED_MIME = array('text/comma-separated-values', 'text/csv', 'text/plain',
@@ -50,11 +50,10 @@
             } else {
                 $response = 'Error: uploaded file size or type is not valid.';
             }
-            return $response;
         }
 
         function insertCSV($filename){ 
-            $conn = mysqli_connect('hostname', 'username', 'password', 'database');
+            $conn = mysqli_connect('localhost', 'root', '', 'webtech');
             //Check for connection error
             if($conn->connect_error){
               die("Error in DB connection: ".$conn->connect_errno." : ".$conn->connect_error);    
